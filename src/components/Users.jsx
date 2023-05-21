@@ -24,9 +24,8 @@ class Users extends Component {
 
     setData = (data) => {
         this.setState({
-            users: data
+            users: data.users
         })
-        console.log(this.state.users)
     }
 
     render() {

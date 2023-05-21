@@ -1,10 +1,10 @@
 .panel {
-    background-color: #f5f5f5;
+    background-color: whitesmoke;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
   
   .panel h2 {
@@ -19,6 +19,6 @@
   }
   
   body {
-    background-color: rgb(82, 210, 167);
+    background-color: #FFEBEE;
     text-align: center;
   }
