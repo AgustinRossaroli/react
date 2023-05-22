@@ -5,7 +5,6 @@ class Category extends Component {
   constructor() {
     super();
     this.state = {
-      products: [],
       totalCategories: 0,
     };
   }
@@ -15,27 +14,22 @@ class Category extends Component {
       .then((response) => response.json())
       .then((data) => {
         this.setState({
-          products: data.products,
-          totalCategories: this.countCategories(data.products),
+          totalCategories: this.countProperties(data.countByCategory),
         });
       })
       .catch((error) => console.log(error));
   }
 
-  countCategories = (products) => {
-    const categories = products.reduce((acc, product) => {
-      if (!acc.includes(product.category)) {
-        acc.push(product.category);
-      }
-      return acc;
-    }, []);
-    return categories.length;
+  countProperties = (obj) => {
+    return Object.keys(obj).length;
   };
 
   render() {
     return (
       <div className="panel">
-        <div><strong>Total de Categorías:</strong> {this.state.totalCategories}</div>
+        <div>
+          <strong>Total de Categorías:</strong> {this.state.totalCategories}
+        </div>
       </div>
     );
   }
